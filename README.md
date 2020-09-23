@@ -2,8 +2,8 @@
 
 ## Dependencies
 
-gh: `brew install gh` (Github Official CLI)
-jq: `brew install jq` (Json parsing)
+- gh: `brew install gh` (Github Official CLI)
+- jq: `brew install jq` (Json parsing)
 
 
 ## gh-issue
