@@ -5,7 +5,7 @@ LOGIN=bennesp
 
 query=$(cat <<-END
 {
-  search(query: "type:pr state:open assignee:$LOGIN", type: ISSUE, first: 100) {
+  search(query: "type:pr state:open review-requested:$LOGIN", type: ISSUE, first: 100) {
     issueCount
     edges {
       node {
@@ -37,8 +37,6 @@ response=$(gh api graphql --paginate -f query="$query")
 
 issueCount=$(echo $response | jq -r '.data.search.issueCount')
 titles=$(echo $response | jq -r '.data.search.edges[].node | (.title + " | href=" + .url)')
-
-echo $response
 
 echo $issueCount
 echo "---"
