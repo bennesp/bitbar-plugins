@@ -1,5 +1,11 @@
 # BitBar Plugins
 
+## Dependencies
+
+gh: `brew install gh` (Github Official CLI)
+jq: `brew install jq` (Json parsing)
+
+
 ## gh-issue
 
 It uses the `gh` cli tool (`brew install gh`) to fetch all the user assigned issues.
