@@ -5,11 +5,11 @@ LOGIN=bennesp
 
 query=$(cat <<-END
 {
-  search(query: "type:pr state:open review-requested:$LOGIN", type: ISSUE, first: 100) {
+  search(query: "state:open assignee:$LOGIN", type: ISSUE, first: 100) {
     issueCount
     edges {
       node {
-        ... on PullRequest {
+        ... on Issue {
           repository {
             nameWithOwner
           }
