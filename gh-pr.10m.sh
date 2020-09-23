@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# Requirements:
+# - gh: brew install gh
+# - jq: brew install jq
+
 # Configure LOGIN with your username. Will be used as a filter in searching issues
 LOGIN=bennesp
 
