@@ -11,7 +11,7 @@
 #
 
 # check if it's there any duplicated arp address
-duplicated_arp=$(arp -a | awk '{print $4}' | uniq -d)
+duplicated_arp=$(arp -a | awk '{print $4}' | grep -v "ff:ff:ff:ff:ff:ff" | uniq -d )
 
 if [ -z "$duplicated_arp" ];then
     # if not, print OK, no attack on this network
