@@ -5,7 +5,7 @@ LOGIN=bennesp
 
 query=$(cat <<-END
 {
-  search(query: "state:open assignee:$LOGIN", type: ISSUE, first: 100) {
+  search(query: "state:open is:issue assignee:$LOGIN", type:ISSUE, first:100) {
     issueCount
     edges {
       node {
