@@ -36,7 +36,7 @@ END
 response=$(gh api graphql --paginate -f query="$query")
 
 issueCount=$(echo $response | jq -r '.data.search.issueCount')
-titles=$(echo $response | jq -r '.data.search.edges[].node | (.title + " | href=" + .url)')
+titles=$(echo $response | jq -r '.data.search.edges[].node | ("[" + .repository.name + "] " + .title + " | href=" + .url)')
 
 isDarkMode=$(osascript <<EOF
 tell application "System Events"
