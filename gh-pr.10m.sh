@@ -11,6 +11,7 @@ query=$(cat <<-END
       node {
         ... on PullRequest {
           repository {
+            name
             nameWithOwner
           }
           author {
